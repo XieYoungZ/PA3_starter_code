@@ -1,5 +1,3 @@
-package cse12pa3student;
-
 /*
  * DO NOT MODIFY
  * Class that implements a single unit in a Maze

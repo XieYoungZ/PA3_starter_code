@@ -1,5 +1,3 @@
-package cse12pa3student;
-
 /* Class to implement a Maze solver */
 
 public abstract class MazeSolver {

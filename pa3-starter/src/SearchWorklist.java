@@ -1,5 +1,3 @@
-package cse12pa3student;
-
 /*
  * Class to implement SearchWorklist as a Stack and a Queue.
  * You can use any built-in Java collections for this class.
