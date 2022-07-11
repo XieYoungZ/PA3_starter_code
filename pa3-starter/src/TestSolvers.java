@@ -56,6 +56,44 @@ public class TestSolvers {
 	}
 
 	@Test
+	public void hardTestQueue() {
+		Maze m = new Maze(new String[] {
+            "#____F",
+            "#___##",
+            "S##___",
+            "__###_",
+			"______"
+        });
+		SearchWorklist wl = new QueueWorklist();
+		String[] answer = new String[] {
+            "#__**F",
+            "#__*##",
+            "S##***",
+            "*_###*",
+			"******"
+        };
+		checkMaze(wl, m, answer);
+	}
+
+	@Test
+	public void simpleTestQueueNoPath() {
+		Maze m = new Maze(new String[] {
+            "#___",
+            "_#F_",
+            "S##_",
+            "___#"
+        });
+		SearchWorklist wl = new QueueWorklist();
+		String[] answer = new String[] {
+            "#___",
+            "_#F_",
+            "S##_",
+            "___#"
+        };
+		checkMaze(wl, m, answer);
+	}
+
+	@Test
 	public void simpleTestStack() {
 		Maze m = new Maze(new String[] {
             "#___",

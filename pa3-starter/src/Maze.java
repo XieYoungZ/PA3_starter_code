@@ -121,16 +121,16 @@ class Maze {
 	 */
 	public ArrayList<Square> storePath() {
 		Stack<Square> pathBackward = new Stack<Square>();
+		ArrayList<Square> path = new ArrayList<>();
 		if (this.finish.getPrevious() == null) {
-			return null;
+			return path;
 		}
 		Square temp = this.finish;
 		while (temp.getPrevious() != null) {
 			pathBackward.add(temp);
 			temp = temp.getPrevious();
 		}
-		ArrayList<Square> path = new ArrayList<>();
-		for (int i = 0; i < pathBackward.size(); i++) {
+		while (!pathBackward.empty()) {
 			path.add(pathBackward.pop());
 		}
 		return path;
