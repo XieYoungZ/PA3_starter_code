@@ -38,8 +38,40 @@ public class TestSolvers {
 	 */
 	
 	@Test
-	public void dummyTest() {
-		assertEquals("TODO: Remove this dummy test after writing your own tests.", "This is a dummy test.");
+	public void simpleTestQueue() {
+		Maze m = new Maze(new String[] {
+            "#___",
+            "__F_",
+            "S##_",
+            "____"
+        });
+		SearchWorklist wl = new QueueWorklist();
+		String[] answer = new String[] {
+            "#___",
+            "**F_",
+            "S##_",
+            "____"
+        };
+		checkMaze(wl, m, answer);
+	}
+
+	@Test
+	public void simpleTestStack() {
+		Maze m = new Maze(new String[] {
+            "#___",
+            "__F_",
+            "S##_",
+            "____"
+        });
+		SearchWorklist wl = new StackWorklist();
+		String[] answer = new String[] {
+            "#___",
+            "__F*",
+            "S##*",
+            "****"
+        };
+		checkMaze(wl, m, answer);
+
 	}
 	
 }

@@ -120,7 +120,19 @@ class Maze {
 	 * @return
 	 */
 	public ArrayList<Square> storePath() {
-		/* Complete this method */
-		return null;
+		Stack<Square> pathBackward = new Stack<Square>();
+		if (this.finish.getPrevious() == null) {
+			return null;
+		}
+		Square temp = this.finish;
+		while (temp.getPrevious() != null) {
+			pathBackward.add(temp);
+			temp = temp.getPrevious();
+		}
+		ArrayList<Square> path = new ArrayList<>();
+		for (int i = 0; i < pathBackward.size(); i++) {
+			path.add(pathBackward.pop());
+		}
+		return path;
 	}
 }
